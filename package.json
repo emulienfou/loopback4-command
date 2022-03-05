@@ -1,0 +1,54 @@
+{
+  "name": "loopback4-command",
+  "description": "Creation of beautiful and testable command line interfaces",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "loopback-4",
+    "loopback-extension",
+    "loopback-next",
+    "command"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "David Sanchez <emulienfou@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emulienfou/loopback4-command.git"
+  },
+  "engines": {
+    "node": "12 || 14 || 16 || 17"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "clean": "lb-clean loopback4-command*.tgz dist *.tsbuildinfo package",
+    "pretest": "npm run build",
+    "verify": "npm pack && tar xf loopback4-command*.tgz && tree package && npm run clean"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "peerDependencies": {
+    "@loopback/core": "*"
+  },
+  "dependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/inquirer": "^8.2.0",
+    "debug": "^4.3.3",
+    "inquirer": "^8.2.0",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@loopback/build": "^8.1.1",
+    "@loopback/core": "^3.1.1",
+    "@loopback/metadata": "^4.1.1",
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  }
+}
