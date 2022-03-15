@@ -1,7 +1,7 @@
 import {Application, Binding, MetadataInspector, MixinTarget } from '@loopback/core';
 import {CommandInterface, CommandMetadata} from '../types';
 import {BINDING_METADATA_KEY} from '../keys';
-import {debug} from '../index';
+import {CommandComponent, debug} from '../index';
 
 /**
  * Command mixin used to execute command.
@@ -10,6 +10,12 @@ import {debug} from '../index';
  */
 export function CommandMixin<T extends MixinTarget<Application>>(superClass: T) {
   return class extends superClass {
+
+    constructor(...args: any[]) {
+      super(...args);
+      this.component(CommandComponent);
+    }
+
     async executeCommand(args: string[]): Promise<void> {
       // Get command arguments
       const commandArgs = args.slice(2)

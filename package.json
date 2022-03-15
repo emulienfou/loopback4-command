@@ -1,7 +1,7 @@
 {
   "name": "loopback4-command",
   "description": "Creation of beautiful and testable command line interfaces",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "loopback-4",
@@ -35,6 +35,7 @@
     "!*/__tests__"
   ],
   "peerDependencies": {
+    "@loopback/boot": "*",
     "@loopback/core": "*"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
+    "@loopback/boot": "^4.1.1",
     "@loopback/build": "^8.1.1",
     "@loopback/core": "^3.1.1",
     "@loopback/metadata": "^4.1.1",

@@ -28,9 +28,9 @@ import {CommandMixin} from 'loopback4-command';
 class MyApplication extends CommandMixin(Application) {}
 ```
 
-### Register commands
+### Create command
 
-We can create an instance of `Command` and bind it to the application context.
+We can now create an instance of `Command`.
 
 ```ts
 import {command, Command} from 'loopback4-command';
@@ -47,9 +47,6 @@ export class DummyCommand extends Command {
       })
   }
 }
-
-// Bind the command class to the application and tag it as a command
-app.add(createBindingFromClass(DummyCommand).tag('command'));
 ```
 
 > This package is using [Inquirer.js](https://www.npmjs.com/package/inquirer) that let you
