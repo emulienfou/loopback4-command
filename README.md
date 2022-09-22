@@ -60,7 +60,7 @@ containing the next script:
 ```ts
 import {Application} from './application';
 
-export const command = async () => {
+export const command = async (args: string[]) => {
   const app = new Application();
   await app.boot();
   await app.executeCommand(args);
@@ -71,7 +71,7 @@ export const command = async () => {
   process.exit(0);
 }
 
-command().catch(err => {
+command(process.argv).catch(err => {
   console.error('Cannot run command', err);
   process.exit(1);
 })
